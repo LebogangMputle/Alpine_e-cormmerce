@@ -82,7 +82,7 @@
     <main>
         <!-- Alpine.js conditional rendering -->
         <div x-data="{ loading: true }" x-init="setTimeout(() => loading = false, 3000)">
-            <template x-if="loading">
+            <div x-if="loading">
                 <!-- CardSkeleton -->
                 <div
                     role="status"
@@ -105,12 +105,12 @@
                     <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-10 mb-4"></div>
                     <span class="sr-only">Loading...</span>
                 </div>
-            </template>
-            <template x-if="!loading">
+            </div>
+            <div x-if="!loading">
                 <!-- Your actual content here -->
                 <h1>Home Page Content</h1>
                 <!-- Example: Product list or other dynamic content -->
-            </template>
+            </div>
         </div>
 
         <div x-data="{ id: '{{ id }}', title: '{{ title }}', description: '{{ description }}', image: '{{ image }}', price: '{{ price }}', rating: {{ rating ? JSON.stringify(rating) : '{}' }}, category: '{{ category }}' }" class="mt-6 sm:mt-8 lg:flex lg:items-start lg:max-w-6xl xl:max-w-7xl mx-auto w-[90%] space-y-2">
